@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Task Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Mini Task Tracker</h1>
+        <p>Simple app to test GitHub + running locally.</p>
+      </header>
+
+      <section class="card">
+        <form id="taskForm" class="row" autocomplete="off">
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="Add a task (e.g., 'Ship v1')"
+            aria-label="Task name"
+            maxlength="80"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+
+        <div class="row row-between">
+          <div class="filters" role="tablist" aria-label="Filters">
+            <button class="chip active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="active" type="button">Active</button>
+            <button class="chip" data-filter="done" type="button">Done</button>
+          </div>
+
+          <button id="clearDone" class="linklike" type="button">Clear done</button>
+        </div>
+
+        <ul id="taskList" class="list" aria-label="Tasks"></ul>
+
+        <footer class="footer">
+          <span id="stats">0 tasks</span>
+          <button id="seed" class="linklike" type="button">Seed demo</button>
+        </footer>
+      </section>
+
+      <section class="hint">
+        <p>
+          Tip: This saves to <strong>localStorage</strong>, so your tasks stay after refresh.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
